@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "levels": [
+    {
+      "id": "P0",
+      "meaning": "blocking/hard correctness"
+    },
+    {
+      "id": "P1",
+      "meaning": "major correction"
+    },
+    {
+      "id": "P2",
+      "meaning": "quality improvement"
+    },
+    {
+      "id": "P3",
+      "meaning": "optional polish"
+    }
+  ],
+  "rule": "P0 cannot be removed to save characters."
+}

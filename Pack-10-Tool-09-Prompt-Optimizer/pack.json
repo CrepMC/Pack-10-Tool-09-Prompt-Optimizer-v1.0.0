@@ -1,0 +1,23 @@
+{
+  "pack_id": "PACK_10_TOOL_09_PROMPT_OPTIMIZER",
+  "name": "Tool 09 — Prompt Optimizer",
+  "version": "1.0.0",
+  "released_at": "2026-08-08",
+  "upstream": [
+    "T08_QA_VISION",
+    "T07_CINEMATIC_DIRECTOR",
+    "T06_ENVIRONMENT_DIRECTOR",
+    "T05_MOTION_DIRECTOR",
+    "T04_CAMERA_DIRECTOR",
+    "T03_CREATIVE_DIRECTOR",
+    "T02_PRODUCT_DNA"
+  ],
+  "downstream": "GENERATION_ORCHESTRATOR",
+  "primary_artifacts": [
+    "FinalPrompt.txt",
+    "OptimizationReport.json"
+  ],
+  "prompt_count": 3,
+  "default_max_prompt_chars": 3800,
+  "hard_max_prompt_chars": 4000
+}

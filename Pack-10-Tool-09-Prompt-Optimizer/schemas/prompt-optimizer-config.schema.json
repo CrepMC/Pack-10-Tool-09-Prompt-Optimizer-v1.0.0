@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PromptOptimizerConfig",
+  "type": "object",
+  "properties": {
+    "maxPromptChars": {
+      "type": "integer",
+      "minimum": 1000,
+      "maximum": 4000,
+      "default": 3800
+    },
+    "hardMaxPromptChars": {
+      "const": 4000
+    },
+    "preservePassingConstraints": {
+      "type": "boolean",
+      "default": true
+    },
+    "minimalDeltaRepair": {
+      "type": "boolean",
+      "default": true
+    },
+    "mergeNegativeIntoPromptWhenNoNativeField": {
+      "type": "boolean",
+      "default": true
+    },
+    "strictNoInventedApiFields": {
+      "type": "boolean",
+      "default": true
+    },
+    "blockOrder": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": [
+        "DIRECTOR",
+        "CAMERA",
+        "MOTION",
+        "PRODUCT",
+        "BACKGROUND",
+        "CINEMATIC",
+        "NEGATIVE"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

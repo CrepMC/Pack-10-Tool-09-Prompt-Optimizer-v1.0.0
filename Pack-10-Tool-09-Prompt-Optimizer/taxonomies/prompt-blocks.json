@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "order": [
+    "DIRECTOR",
+    "CAMERA",
+    "MOTION",
+    "PRODUCT",
+    "BACKGROUND",
+    "CINEMATIC",
+    "NEGATIVE"
+  ],
+  "rule": "Canonical output uses fixed block order for deterministic review."
+}

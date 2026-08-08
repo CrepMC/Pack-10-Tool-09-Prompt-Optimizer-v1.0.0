@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "T09GenerationHandoff",
+  "type": "object",
+  "required": [
+    "source_tool",
+    "artifact_type",
+    "schema_version",
+    "final_prompt_ref",
+    "optimization_report_ref",
+    "source_refs",
+    "integrity_sha256",
+    "ready_for_generation"
+  ],
+  "properties": {
+    "source_tool": {
+      "const": "T09_PROMPT_OPTIMIZER"
+    },
+    "artifact_type": {
+      "const": "FinalPromptPackage"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "final_prompt_ref": {
+      "type": "string"
+    },
+    "optimization_report_ref": {
+      "type": "string"
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "integrity_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "ready_for_generation": {
+      "type": "boolean"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

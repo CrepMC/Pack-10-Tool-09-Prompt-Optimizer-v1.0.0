@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "strategies": [
+    "deduplicate",
+    "canonicalize_terms",
+    "remove_explanations",
+    "compress_soft_style",
+    "merge_equivalent_guards",
+    "drop_low_priority_polish",
+    "shorten_adjectives",
+    "compact_lists"
+  ],
+  "forbidden": [
+    "drop_product_lock",
+    "drop_hard_ratio",
+    "drop_QA_P0",
+    "change_meaning"
+  ]
+}

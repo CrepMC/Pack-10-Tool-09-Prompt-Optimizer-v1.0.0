@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "precedence": [
+    "ProductLock/reference truth",
+    "User/project hard constraints",
+    "QA P0 corrections",
+    "QA P1 corrections",
+    "Locked Camera/Motion/Environment/Cinematic plans",
+    "Creative direction",
+    "Optional polish"
+  ],
+  "rule": "Higher source wins on conflict."
+}

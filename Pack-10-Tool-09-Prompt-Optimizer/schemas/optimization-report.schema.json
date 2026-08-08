@@ -1,0 +1,305 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/optimization-report.schema.json",
+  "title": "OptimizationReport",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "artifact_type",
+    "schema_version",
+    "artifact_version",
+    "project_id",
+    "status",
+    "source_refs",
+    "prompt_stats",
+    "applied_corrections",
+    "preserved_constraints",
+    "conflicts_resolved",
+    "compression_actions",
+    "final_blocks",
+    "validation",
+    "warnings"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "artifact_type": {
+      "const": "OptimizationReport"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "artifact_version": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "DRAFT",
+        "VALIDATED",
+        "LOCKED"
+      ]
+    },
+    "source_refs": {
+      "type": "object",
+      "required": [
+        "product_dna",
+        "creative_brief",
+        "camera_plan",
+        "motion_plan",
+        "environment_plan",
+        "cinematic_plan",
+        "qa_report"
+      ],
+      "properties": {
+        "product_dna": {
+          "type": "string"
+        },
+        "creative_brief": {
+          "type": "string"
+        },
+        "camera_plan": {
+          "type": "string"
+        },
+        "motion_plan": {
+          "type": "string"
+        },
+        "environment_plan": {
+          "type": "string"
+        },
+        "cinematic_plan": {
+          "type": "string"
+        },
+        "qa_report": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "prompt_stats": {
+      "type": "object",
+      "required": [
+        "character_count",
+        "max_prompt_chars",
+        "hard_max_chars",
+        "within_limit",
+        "block_counts"
+      ],
+      "properties": {
+        "character_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_prompt_chars": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "hard_max_chars": {
+          "const": 4000
+        },
+        "within_limit": {
+          "type": "boolean"
+        },
+        "block_counts": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "applied_corrections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/change"
+      }
+    },
+    "preserved_constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conflicts_resolved": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/conflict"
+      }
+    },
+    "compression_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "final_blocks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/block"
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "schema_valid",
+        "no_conflicts",
+        "hard_constraints_present",
+        "qa_p0_present",
+        "length_valid",
+        "ready_for_generation"
+      ],
+      "properties": {
+        "schema_valid": {
+          "type": "boolean"
+        },
+        "no_conflicts": {
+          "type": "boolean"
+        },
+        "hard_constraints_present": {
+          "type": "boolean"
+        },
+        "qa_p0_present": {
+          "type": "boolean"
+        },
+        "length_valid": {
+          "type": "boolean"
+        },
+        "ready_for_generation": {
+          "type": "boolean"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "change": {
+      "type": "object",
+      "required": [
+        "change_id",
+        "priority",
+        "source_issue_refs",
+        "target_block",
+        "before_summary",
+        "after_summary",
+        "reason"
+      ],
+      "properties": {
+        "change_id": {
+          "type": "string"
+        },
+        "priority": {
+          "enum": [
+            "P0",
+            "P1",
+            "P2",
+            "P3"
+          ]
+        },
+        "source_issue_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "target_block": {
+          "type": "string"
+        },
+        "before_summary": {
+          "type": "string"
+        },
+        "after_summary": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "conflict": {
+      "type": "object",
+      "required": [
+        "conflict_id",
+        "sources",
+        "winner",
+        "loser",
+        "rule",
+        "resolution"
+      ],
+      "properties": {
+        "conflict_id": {
+          "type": "string"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "winner": {
+          "type": "string"
+        },
+        "loser": {
+          "type": "string"
+        },
+        "rule": {
+          "type": "string"
+        },
+        "resolution": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "block": {
+      "type": "object",
+      "required": [
+        "name",
+        "content",
+        "priority_floor"
+      ],
+      "properties": {
+        "name": {
+          "enum": [
+            "DIRECTOR",
+            "CAMERA",
+            "MOTION",
+            "PRODUCT",
+            "BACKGROUND",
+            "CINEMATIC",
+            "NEGATIVE"
+          ]
+        },
+        "content": {
+          "type": "string"
+        },
+        "priority_floor": {
+          "enum": [
+            "P0",
+            "P1",
+            "P2",
+            "P3"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

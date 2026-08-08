@@ -1,0 +1,12 @@
+flowchart LR
+ A[T02-T08 Artifacts] --> B[Validate Sources]
+ B --> C[Priority Resolver]
+ C --> D[QA Minimal Delta Repair]
+ D --> E[Block Compiler]
+ E --> F[Conflict Resolver]
+ F --> G[Compression]
+ G --> H[Length + Hard Lock Validation]
+ H --> I[FinalPrompt]
+ H --> J[OptimizationReport]
+ I --> K[Generation Orchestrator]
+ J --> K

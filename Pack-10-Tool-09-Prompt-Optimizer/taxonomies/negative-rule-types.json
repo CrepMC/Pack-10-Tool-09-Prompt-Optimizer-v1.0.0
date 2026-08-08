@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "types": [
+    "product_mutation",
+    "forbidden_contact",
+    "camera_violation",
+    "motion_violation",
+    "environment_hallucination",
+    "cinematic_overprocessing",
+    "technical_format",
+    "continuity"
+  ],
+  "rule": "Negative rules must be evidence-/contract-based, not generic contradictions."
+}

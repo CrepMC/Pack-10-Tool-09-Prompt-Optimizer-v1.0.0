@@ -1,0 +1,9 @@
+flowchart TD
+ P[Compiled Prompt] --> C{Chars <= 3800?}
+ C -->|Yes| V[Validate]
+ C -->|No| D[Dedupe / Canonicalize]
+ D --> E[Remove rationale / soft polish]
+ E --> F[Merge equivalent guards]
+ F --> H{Chars <= 4000?}
+ H -->|Yes| V
+ H -->|No| B[BLOCK]

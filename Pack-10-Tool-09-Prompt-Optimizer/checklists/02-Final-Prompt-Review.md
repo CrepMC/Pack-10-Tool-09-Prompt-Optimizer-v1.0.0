@@ -1,0 +1,15 @@
+# Final Prompt Review
+- [ ] ProductLock present.
+- [ ] User hard constraints present.
+- [ ] QA P0/P1 applied.
+- [ ] Passing constraints preserved.
+- [ ] Seven blocks ordered.
+- [ ] No cross-block contradictions.
+- [ ] 9:16 preserved if required.
+- [ ] No zoom conflict.
+- [ ] Final settled-state rule correct.
+- [ ] Background lock correct.
+- [ ] Cinematic treatment product-safe.
+- [ ] Negative rules product-aware.
+- [ ] Character count <= configured max.
+- [ ] Never >4000.

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PromptOptimizerInput",
+  "type": "object",
+  "required": [
+    "product_dna",
+    "creative_brief",
+    "camera_plan",
+    "motion_plan",
+    "environment_plan",
+    "cinematic_plan",
+    "qa_report",
+    "config"
+  ],
+  "properties": {
+    "product_dna": {
+      "type": "string"
+    },
+    "creative_brief": {
+      "type": "string"
+    },
+    "camera_plan": {
+      "type": "string"
+    },
+    "motion_plan": {
+      "type": "string"
+    },
+    "environment_plan": {
+      "type": "string"
+    },
+    "cinematic_plan": {
+      "type": "string"
+    },
+    "qa_report": {
+      "type": "string"
+    },
+    "config": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

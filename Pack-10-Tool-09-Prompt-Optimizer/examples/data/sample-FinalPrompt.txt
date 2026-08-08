@@ -1,0 +1,14 @@
+[DIRECTOR]
+Clean premium commercial fashion presentation; product readability first.
+[CAMERA]
+9:16 portrait, full-body, smooth dolly-back tracking, stable front composition, no digital zoom.
+[MOTION]
+Controlled forward approach; restrained hands remain clear of neckline/chest; no garment adjustment; decelerate, complete step cycle, ground both feet, settle into stable final standing state.
+[PRODUCT]
+Preserve exact reference collarless V-neck blue black-polka-dot top and beige-cream wide-leg pants; exact silhouette, neckline, pattern, colors and material appearance; retain confirmed accessories.
+[BACKGROUND]
+Preserve exact approved reference environment, hard anchors/signage and fixed geometry; clear subject corridor; no new people/objects; depth-consistent parallax.
+[CINEMATIC]
+Soft commercial lighting, balanced exposure, natural skin, product-safe focus, controlled motion blur, premium-neutral grade preserving product color/material.
+[NEGATIVE]
+No neckline/collar contact, pulling or redesign; no product mutation; no digital zoom/crop; no background replacement/new people/props; no hue/material transformation; no mid-step ending/freeze substitute.

@@ -1,0 +1,120 @@
+{
+  "artifact_id": "art_opt_001",
+  "artifact_type": "OptimizationReport",
+  "schema_version": "1.0.0",
+  "artifact_version": "1.0.0",
+  "project_id": "fashion_ad_001",
+  "status": "LOCKED",
+  "source_refs": {
+    "product_dna": "art_pdna_001",
+    "creative_brief": "art_creative_001",
+    "camera_plan": "art_camera_001",
+    "motion_plan": "art_motion_001",
+    "environment_plan": "art_env_001",
+    "cinematic_plan": "art_cine_001",
+    "qa_report": "art_qa_001"
+  },
+  "prompt_stats": {
+    "character_count": 1431,
+    "max_prompt_chars": 3800,
+    "hard_max_chars": 4000,
+    "within_limit": true,
+    "block_counts": {
+      "DIRECTOR": 120,
+      "CAMERA": 220,
+      "MOTION": 250,
+      "PRODUCT": 300,
+      "BACKGROUND": 220,
+      "CINEMATIC": 210,
+      "NEGATIVE": 111
+    }
+  },
+  "applied_corrections": [
+    {
+      "change_id": "chg_001",
+      "priority": "P0",
+      "source_issue_refs": [
+        "qa_issue_001"
+      ],
+      "target_block": "MOTION/NEGATIVE",
+      "before_summary": "Natural hand motion could approach neckline.",
+      "after_summary": "Hands remain clear of neckline; no collar/neckline contact or garment adjustment.",
+      "reason": "QA detected critical neckline mutation during hand interaction."
+    }
+  ],
+  "preserved_constraints": [
+    "9:16 portrait",
+    "smooth dolly-back tracking",
+    "approved background identity",
+    "blue product color family",
+    "premium-neutral cinematic treatment"
+  ],
+  "conflicts_resolved": [
+    {
+      "conflict_id": "conf_001",
+      "sources": [
+        "CreativeBrief optional gesture",
+        "QA P0 neckline correction"
+      ],
+      "winner": "QA P0 neckline correction",
+      "loser": "optional gesture",
+      "rule": "QA P0 > creative optional detail",
+      "resolution": "Remove gesture that risks neckline contact."
+    }
+  ],
+  "compression_actions": [
+    "Removed duplicate product-preservation phrases.",
+    "Merged equivalent no-zoom rules.",
+    "Shortened low-priority style adjectives."
+  ],
+  "final_blocks": [
+    {
+      "name": "DIRECTOR",
+      "content": "Clean premium commercial fashion presentation; product readability first.",
+      "priority_floor": "P2"
+    },
+    {
+      "name": "CAMERA",
+      "content": "9:16 portrait, full-body, smooth dolly-back tracking, stable front composition, no zoom.",
+      "priority_floor": "P0"
+    },
+    {
+      "name": "MOTION",
+      "content": "Controlled forward approach; restrained arms clear of neckline; decelerate, complete step cycle, settle into stable front standing state.",
+      "priority_floor": "P0"
+    },
+    {
+      "name": "PRODUCT",
+      "content": "Preserve exact collarless V-neck blue black-polka-dot top and beige-cream wide-leg pants; exact silhouette, pattern, color and material appearance.",
+      "priority_floor": "P0"
+    },
+    {
+      "name": "BACKGROUND",
+      "content": "Preserve approved reference environment, anchors, signage and fixed geometry; no new people or objects; depth-consistent parallax.",
+      "priority_floor": "P0"
+    },
+    {
+      "name": "CINEMATIC",
+      "content": "Soft commercial lighting, balanced exposure, natural skin, product-safe focus, controlled motion blur, premium-neutral grade preserving product colors/material.",
+      "priority_floor": "P1"
+    },
+    {
+      "name": "NEGATIVE",
+      "content": "No neckline/collar contact or mutation; no digital zoom; no crop; no background replacement; no added people/props; no hue/material transformation; no mid-step ending.",
+      "priority_floor": "P0"
+    }
+  ],
+  "validation": {
+    "schema_valid": true,
+    "no_conflicts": true,
+    "hard_constraints_present": true,
+    "qa_p0_present": true,
+    "length_valid": true,
+    "ready_for_generation": true,
+    "errors": []
+  },
+  "warnings": [
+    "Every new generation requires a new QA pass."
+  ],
+  "created_at": "2026-08-08T09:00:00Z"
+}
